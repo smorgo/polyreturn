@@ -14,15 +14,15 @@ namespace polyreturn
             {
                 var response = handler.Take<string, int>(
                     onInt : (iValue) => { 
-                        Console.WriteLine($"Take return an int, {iValue}");},
+                        Console.WriteLine($"Take returned an int, {iValue}");},
                     onDouble : (dValue) => {
-                        Console.WriteLine($"Take return a double, {dValue}");},
+                        Console.WriteLine($"Take returned a double, {dValue}");},
                     onBool : (bValue) => {
-                        Console.WriteLine($"Take return a bool, {bValue}");},
+                        Console.WriteLine($"Take returned a bool, {bValue}");},
                     onString : (sValue) => {
-                        Console.WriteLine($"Take return a string, {sValue}");},
+                        Console.WriteLine($"Take returned a string, \"{sValue}\"");},
                     onTuple : (tValue) => {
-                        Console.WriteLine($"Take return a tuple, <\"{tValue.Item1}\",{tValue.Item2}>");}
+                        Console.WriteLine($"Take returned a tuple, <\"{tValue.Item1}\",{tValue.Item2}>");}
                 );
 
                 if(response.ErrorCode != 0)
