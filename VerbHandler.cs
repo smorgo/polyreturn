@@ -32,7 +32,7 @@ namespace polyreturn
         {
             // Some silly logic to return different types
             
-            switch(_rnd.Next(1,6))
+            switch(_rnd.Next(0,6))
             {
                 case 1:
                     onInt?.Invoke(_rnd.Next());
@@ -49,7 +49,7 @@ namespace polyreturn
                 case 5:
                     onTuple?.Invoke(new Tuple<T, TU>(default(T), default(TU)));
                     break;
-                case 6:
+                default:
                     return new VerbResponse(_rnd.Next(), "There was an error");
             }
 
